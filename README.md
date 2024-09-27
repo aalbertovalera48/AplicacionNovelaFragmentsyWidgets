@@ -52,10 +52,10 @@ Toda la lógica de la aplicación está contenida en este archivo, desde la gest
 4. **AddNovelaScreen:**
    - Pantalla con un formulario para añadir una nueva novela. Incluye validación de los campos y agrega la novela a la lista una vez completado.
 
-#### Modelo de Datos Novela:
+## Modelo de Datos Novela:
 El modelo de datos de la novela incluye propiedades como `id`, `titulo`, `autor`, `añoPublicacion`, `sinopsis`, `esfavorita` y una lista mutable de reseñas.
 
-#### Navegación y Estado:
+## Navegación y Estado:
 Se utiliza `NavController` para la navegación entre pantallas, y los estados de la lista de novelas y las reseñas se manejan utilizando `remember` y `mutableStateListOf`, permitiendo una gestión eficiente del estado.
 
 ## Conclusión
