@@ -1,6 +1,7 @@
 # README - Aplicación Android de Gestión de Novelas
 
 ## Link al Repositorio GitHub: 
+https://github.com/aalbertovalera48/AplicacionNovela.git
 
 
 ## Ejercicio Individual
