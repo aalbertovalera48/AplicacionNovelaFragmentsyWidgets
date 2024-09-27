@@ -15,7 +15,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
             val novelas = remember { mutableStateListOf<Novela>() }
-
             NavHost(navController = navController, startDestination = "novelas_list") {
                 composable("novelas_list") {
                     NovelasListScreen(navController = navController, novelas = novelas)

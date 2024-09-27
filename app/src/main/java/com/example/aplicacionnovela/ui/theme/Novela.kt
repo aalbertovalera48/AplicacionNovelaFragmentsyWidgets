@@ -1,5 +1,6 @@
 package com.example.aplicacionnovela.ui.theme
 
+
 data class Novela(
     val id: Int,
     val titulo: String,

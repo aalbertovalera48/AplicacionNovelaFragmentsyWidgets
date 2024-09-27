@@ -8,7 +8,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacionNovela">
-
         <activity
             android:name="com.example.aplicacionnovela.ui.theme.MainActivity"
             android:exported="true">
