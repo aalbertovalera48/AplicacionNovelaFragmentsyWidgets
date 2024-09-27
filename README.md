@@ -1,7 +1,7 @@
 # README - Aplicación de Gestión de Novelas- Alberto Valera 
 
 ## Link al Repositorio GitHub:
-[Enlace al Repositorio](https://github.com/usuario/aplicacion-novelas.git)
+https://github.com/aalbertovalera48/AplicacionNovela.git
 
 ## Ejercicio Individual
 
