@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#EAEFF1">
+
+    <!-- Título Principal -->
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Biblioteca de Novelas"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#263238"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:letterSpacing="0.05" />
+
+    <!-- Subtítulo -->
+    <TextView
+        android:id="@+id/subtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:text="Organiza y disfruta de tus lecturas"
+        android:textSize="16sp"
+        android:textColor="#455A64"
+        android:letterSpacing="0.03" />
+
+    <!-- Botón de Sincronización -->
+    <ImageButton
+        android:id="@+id/sync_button"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/ic_sync"
+        android:contentDescription="Botón de sincronización"
+        android:background="?attr/selectableItemBackground"
+        android:layout_gravity="end"
+        android:layout_marginTop="16dp"
+        app:tint="#03A9F4" />
+
+    <!-- Lista de Novelas -->
+    <ListView
+        android:id="@+id/list_view_novelas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#B0BEC5"
+        android:dividerHeight="1dp"
+        android:layout_marginTop="16dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:padding="12dp"
+        android:clipToPadding="false" />
+
+    <!-- Botones Inferiores -->
+    <LinearLayout
+        android:id="@+id/bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="4"
+        android:layout_marginBottom="24dp">
+
+        <!-- Botón Añadir -->
+        <Button
+            android:id="@+id/btn_agregar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Añadir"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginEnd="4dp"
+            android:padding="10dp"
+            android:elevation="6dp" />
+
+        <!-- Botón Eliminar -->
+        <Button
+            android:id="@+id/btn_eliminar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Eliminar"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#F44336"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:padding="10dp"
+            android:elevation="6dp" />
+
+        <!-- Botón Favoritos -->
+        <Button
+            android:id="@+id/btn_favoritos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Favoritos"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFC107"
+            android:layout_marginStart="4dp"
+            android:padding="10dp"
+            android:elevation="6dp" />
+
+        <!-- Botón Buscar Novelas -->
+        <Button
+            android:id="@+id/btn_buscar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Buscar"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2196F3"
+            android:layout_marginStart="4dp"
+            android:padding="10dp"
+            android:elevation="6dp" />
+    </LinearLayout>
+</LinearLayout>
