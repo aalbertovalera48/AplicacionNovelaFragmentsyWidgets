@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacionNovela">
         <activity
-            android:name="com.example.aplicacionnovela.theme.MainActivity"
+            android:name="com.example.aplicacionnovela.ui.theme.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.aplicacionnovela.theme.FavoritosActivity"
+            android:name="com.example.aplicacionnovela.ui.theme.FavoritosActivity"
             android:exported="false" />
     </application>
 </manifest>
