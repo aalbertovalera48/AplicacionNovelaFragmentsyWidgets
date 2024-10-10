@@ -1,13 +1,10 @@
-package com.example.gestionnovelasavanzado.ui.Activities
+package com.example.aplicacionnovela.ui.theme
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aplicacionnovela.R
-import com.example.aplicacionnovela.ui.theme.Novela
-import com.example.aplicacionnovela.ui.theme.NovelaAdapter
-
 
 class FavoritosActivity : AppCompatActivity() {
 

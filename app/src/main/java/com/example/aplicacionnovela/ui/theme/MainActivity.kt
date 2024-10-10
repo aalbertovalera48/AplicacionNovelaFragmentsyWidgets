@@ -1,5 +1,6 @@
-package com.example.gestionnovelasavanzado.ui.Activities
+package com.example.aplicacionnovela.ui.theme
 
+import com.example.gestionnovelasavanzado.ui.Activities.FavoritosActivity
 import SyncTask
 import android.app.AlertDialog
 import android.content.Intent
@@ -12,9 +13,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aplicacionnovela.R
-import com.example.aplicacionnovela.ui.theme.AlarmManager
-import com.example.aplicacionnovela.ui.theme.Novela
-import com.example.aplicacionnovela.ui.theme.NovelaAdapter
 import com.example.gestionnovelasavanzado.ui.GestionSegundoPlano.FirebaseConfig
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
