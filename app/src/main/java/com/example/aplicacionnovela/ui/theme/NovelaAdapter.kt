@@ -6,10 +6,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.example.aplicacionnovela.R
-import com.example.gestionnovelasavanzado.ui.Activities.MainActivity
 
 
-// Clase NovelaAdapter que extiende BaseAdapter y se utiliza para mostrar la lista de novelas
 class NovelaAdapter(private val context: Context, private val novelas: List<Novela>) : BaseAdapter() {
 
     override fun getCount(): Int {
@@ -24,7 +22,6 @@ class NovelaAdapter(private val context: Context, private val novelas: List<Nove
         return position.toLong()
     }
 
-    // Método para inflar la vista de cada elemento de la lista
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.item_novela, parent, false)
 
@@ -35,10 +32,9 @@ class NovelaAdapter(private val context: Context, private val novelas: List<Nove
         textViewTitulo.text = novela.titulo
         textViewAutor.text = novela.autor
 
-        // Añadir un evento al clic de la novela
         view.setOnClickListener {
             if (context is MainActivity) {
-                context.mostrarDetallesNovela(novela) // Llama a mostrarDetallesNovela
+                context.mostrarDetallesNovela(novela)
             }
         }
 

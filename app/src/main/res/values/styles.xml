@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema principal de la application -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/backgroundLight</item>
+    </style>
+
+    <!-- Tema secundario de la application Dark -->
+    <style name="AppTheme.Dark" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/darkPrimary</item>
+        <item name="colorPrimaryDark">@color/darkPrimaryVariant</item>
+        <item name="colorAccent">@color/darkSecondary</item>
+        <item name="android:windowBackground">@color/darkBackground</item>
+        <item name="colorSurface">@color/darkSurface</item>
+        <item name="colorOnPrimary">@color/darkOnPrimary</item>
+        <item name="colorOnSecondary">@color/darkOnSecondary</item>
+        <item name="colorOnBackground">@color/darkOnBackground</item>
+        <item name="colorOnSurface">@color/darkOnSurface</item>
+    </style>
+</resources>

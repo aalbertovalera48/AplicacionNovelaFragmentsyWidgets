@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
     <!-- Permiso para acceso a internet -->
     <uses-permission android:name="android.permission.INTERNET" />
+
     <!-- Permiso para acceder al estado de la red -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <!-- Permiso para configurar alarmas (si es necesario para AlarmManager) -->
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -19,6 +22,15 @@
         android:theme="@style/Theme.AplicacionNovela">
         <activity
             android:name="com.example.aplicacionnovela.ui.theme.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.theme.SettingsActivity" />
+        <activity android:name="com.example.aplicacionnovela.ui.theme.RegisterActivity" />
+        <activity android:name="com.example.aplicacionnovela.ui.theme.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

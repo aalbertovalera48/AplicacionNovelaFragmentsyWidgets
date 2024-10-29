@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
     android:background="#EAEFF1">
 
@@ -16,109 +15,145 @@
         android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="#263238"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
-        android:letterSpacing="0.05" />
+        android:letterSpacing="0.05"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Subtítulo -->
     <TextView
         android:id="@+id/subtitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="4dp"
         android:text="Organiza y disfruta de tus lecturas"
         android:textSize="16sp"
         android:textColor="#455A64"
-        android:letterSpacing="0.03" />
+        android:letterSpacing="0.03"
+        app:layout_constraintTop_toBottomOf="@id/titulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Botón de Sincronización -->
     <ImageButton
         android:id="@+id/sync_button"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:src="@drawable/ic_sync"
         android:contentDescription="Botón de sincronización"
         android:background="?attr/selectableItemBackground"
-        android:layout_gravity="end"
         android:layout_marginTop="16dp"
-        app:tint="#03A9F4" />
+        app:tint="#03A9F4"
+        app:layout_constraintTop_toBottomOf="@id/subtitulo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Botón de Configuración -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/subtitulo"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/settings_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_settings"
+            android:contentDescription="Settings"
+            android:background="?attr/selectableItemBackground"
+            app:tint="#03A9F4" />
+
+    </LinearLayout>
 
     <!-- Lista de Novelas -->
     <ListView
         android:id="@+id/list_view_novelas"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:clipToPadding="false"
         android:divider="#B0BEC5"
         android:dividerHeight="1dp"
-        android:layout_marginTop="16dp"
-        android:background="#FFFFFF"
         android:elevation="4dp"
         android:padding="12dp"
-        android:clipToPadding="false" />
+        app:layout_constraintTop_toBottomOf="@id/sync_button"
+        app:layout_constraintBottom_toTopOf="@id/bottom_buttons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Botones Inferiores -->
     <LinearLayout
         android:id="@+id/bottom_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginBottom="24dp"
         android:gravity="center"
+        android:orientation="horizontal"
         android:weightSum="4"
-        android:layout_marginBottom="24dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <!-- Botón Añadir -->
         <Button
             android:id="@+id/btn_agregar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
             android:layout_weight="1"
+            android:backgroundTint="#4CAF50"
+            android:elevation="6dp"
+            android:padding="10dp"
             android:text="Añadir"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#4CAF50"
-            android:layout_marginEnd="4dp"
-            android:padding="10dp"
-            android:elevation="6dp" />
+            android:textSize="14sp" />
 
         <!-- Botón Eliminar -->
         <Button
             android:id="@+id/btn_eliminar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Eliminar"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#F44336"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="#F44336"
+            android:elevation="6dp"
             android:padding="10dp"
-            android:elevation="6dp" />
+            android:text="Eliminar"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
 
         <!-- Botón Favoritos -->
         <Button
             android:id="@+id/btn_favoritos"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:layout_weight="1"
+            android:backgroundTint="#FFC107"
+            android:elevation="6dp"
+            android:padding="10dp"
             android:text="Favoritos"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#FFC107"
-            android:layout_marginStart="4dp"
-            android:padding="10dp"
-            android:elevation="6dp" />
+            android:textSize="11sp" />
 
         <!-- Botón Buscar Novelas -->
         <Button
             android:id="@+id/btn_buscar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:layout_weight="1"
+            android:backgroundTint="#2196F3"
+            android:elevation="6dp"
+            android:padding="10dp"
             android:text="Buscar"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#2196F3"
-            android:layout_marginStart="4dp"
-            android:padding="10dp"
-            android:elevation="6dp" />
+            android:textSize="14sp" />
     </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ import android.content.Context
 import android.os.AsyncTask
 import android.widget.Toast
 import com.example.aplicacionnovela.ui.theme.Novela
+import com.example.aplicacionnovela.ui.theme.NovelaAdapter
 import com.example.gestionnovelasavanzado.ui.GestionSegundoPlano.FirebaseConfig
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -9,43 +10,43 @@ import com.google.firebase.database.ValueEventListener
 
 class SyncTask(
     private val context: Context,
-    private val novelas: MutableList<Novela>
+    private val novelas: MutableList<Novela>,
+    private val adapter: NovelaAdapter
 ) : AsyncTask<Void, Void, Boolean>() {
 
     private val firebaseHelper = FirebaseConfig()
 
     override fun doInBackground(vararg params: Void?): Boolean {
-        try {
-            // Simulación de carga de datos
-            firebaseHelper.cargarTodasLasNovelas(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    novelas.clear()
-                    for (novelaSnapshot in snapshot.children) {
-                        val novela = novelaSnapshot.getValue(Novela::class.java)
-                        novela?.let { novelas.add(it) }
-                    }
-                    onPostExecute(true) // Llama a onPostExecute manualmente
+        var success = false
+        val latch = java.util.concurrent.CountDownLatch(1)
+
+        firebaseHelper.cargarTodasLasNovelas(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                novelas.clear()
+                for (novelaSnapshot in snapshot.children) {
+                    val novela = novelaSnapshot.getValue(Novela::class.java)
+                    novela?.let { novelas.add(it) }
                 }
+                success = true
+                latch.countDown()
+            }
 
-                override fun onCancelled(error: DatabaseError) {
-                    onPostExecute(false)
-                }
-            })
+            override fun onCancelled(error: DatabaseError) {
+                success = false
+                latch.countDown()
+            }
+        })
 
-            Thread.sleep(2000) // Ajustar el tiempo de espera según sea necesario
-
-            return true
-        } catch (e: Exception) {
-            e.printStackTrace()
-            return false
-        }
+        latch.await()
+        return success
     }
 
     override fun onPostExecute(result: Boolean) {
         if (result) {
-            Toast.makeText(context, "Sincronización completa", Toast.LENGTH_SHORT).show()
+            adapter.notifyDataSetChanged()
+            Toast.makeText(context, "Synchronization complete", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(context, "Error en la sincronización", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Synchronization error", Toast.LENGTH_SHORT).show()
         }
     }
 }

@@ -1,132 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#FAFAFA">
+    android:background="@android:color/white">
 
-    <!-- Título Principal -->
     <TextView
-        android:id="@+id/titulo"
+        android:id="@+id/textViewFavoritosTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Biblioteca de Novelas"
-        android:textSize="28sp"
+        android:text="Favoritos"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#212121"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="24dp"
-        android:letterSpacing="0.04"
-        android:fontFamily="sans-serif-medium" />
+        android:textColor="@android:color/black"
+        android:layout_gravity="center"
+        android:paddingBottom="16dp" />
 
-    <!-- Subtítulo -->
-    <TextView
-        android:id="@+id/subtitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="8dp"
-        android:text="Organiza y explora tus lecturas"
-        android:textSize="16sp"
-        android:textColor="#757575"
-        android:fontFamily="sans-serif-light" />
-
-    <!-- Botón de Sincronización con fondo circular -->
-    <ImageButton
-        android:id="@+id/sync_button"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/ic_sync"
-        android:contentDescription="Botón de sincronización"
-        android:background="@drawable/circular_background_sync"
-        android:layout_gravity="end"
-        android:layout_marginTop="24dp"
-        app:tint="#03A9F4" />
-
-    <!-- Lista de Novelas con bordes redondeados -->
     <ListView
-        android:id="@+id/list_view_novelas"
+        android:id="@+id/list_view_favoritos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_card_background"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="8dp"
-        android:elevation="4dp"
-        android:padding="8dp"
-        android:clipToPadding="false" />
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
 
-    <!-- Botones Inferiores con estilo moderno -->
-    <LinearLayout
-        android:id="@+id/bottom_buttons"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btn_volver"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:gravity="center"
-        android:layout_marginBottom="24dp">
-
-        <!-- Botón Añadir -->
-        <Button
-            android:id="@+id/btn_agregar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Añadir"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#4CAF50"
-            android:layout_marginEnd="6dp"
-            android:padding="12dp"
-            android:elevation="2dp"
-            android:background="@drawable/rounded_button_background" />
-
-        <!-- Botón Eliminar -->
-        <Button
-            android:id="@+id/btn_eliminar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Eliminar"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#F44336"
-            android:layout_marginHorizontal="6dp"
-            android:padding="12dp"
-            android:elevation="2dp"
-            android:background="@drawable/rounded_button_background" />
-
-        <!-- Botón Favoritos -->
-        <Button
-            android:id="@+id/btn_favoritos"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Favoritos"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#FF9800"
-            android:layout_marginStart="6dp"
-            android:padding="12dp"
-            android:elevation="2dp"
-            android:background="@drawable/rounded_button_background" />
-        <!-- ListView para Favoritos -->
-        <ListView
-            android:id="@+id/list_view_favoritos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="8dp"
-            android:layout_margin="16dp" />
-
-        <!-- Botón Volver -->
-        <Button
-            android:id="@+id/btn_volver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Volver"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp" />
-    </LinearLayout>
-
+        android:text="Volver"
+        android:layout_gravity="center"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:layout_marginTop="16dp" />
 </LinearLayout>

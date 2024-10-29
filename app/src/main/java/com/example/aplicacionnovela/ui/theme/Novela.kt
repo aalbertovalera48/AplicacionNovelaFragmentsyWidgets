@@ -3,17 +3,17 @@ package com.example.aplicacionnovela.ui.theme
 import android.os.Parcel
 import android.os.Parcelable
 
-// Clase Novela que implementa Parcelable para pasar objetos entre actividades
+
 data class Novela(
     var id: String? = null,
-    var titulo: String,
-    var autor: String,
-    var añoPublicacion: Int,
-    var sinopsis: String,
-    var favorito: Boolean = false
+    var titulo: String = "",
+    var autor: String = "",
+    var añoPublicacion: Int = 0,
+    var sinopsis: String = "",
+    var favorito: Boolean = false,
+    var reseñas: List<String> = emptyList()
 ) : Parcelable {
-
-    // Constructor con parcel que sirve para pasar objetos entre actividades
+    constructor() : this(null, "", "", 0, "", false)
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString() ?: "",
@@ -23,7 +23,6 @@ data class Novela(
         parcel.readByte() != 0.toByte()
     )
 
-    // Métodos describeContents e writeToParcel implementados de Parcelable
     override fun describeContents(): Int {
         return 0
     }
@@ -37,7 +36,6 @@ data class Novela(
         parcel.writeByte(if (favorito) 1 else 0)
     }
 
-    // Crear un objeto Parcelable de Novela
     companion object CREATOR : Parcelable.Creator<Novela> {
         override fun createFromParcel(parcel: Parcel): Novela {
             return Novela(parcel)

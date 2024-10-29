@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/textViewTitulo"
@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:text="Título:"
         android:textStyle="bold"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textColor="@android:color/black"
         android:layout_alignParentTop="true" />
 
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Autor: "
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textColor="@android:color/black"
         android:layout_below="@id/textViewTitulo"
         android:layout_marginTop="8dp" />
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Año: "
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textColor="@android:color/black"
         android:layout_below="@id/textViewAutor"
         android:layout_marginTop="8dp" />
@@ -38,9 +38,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sinopsis: "
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textColor="@android:color/black"
         android:layout_below="@id/textViewAño"
         android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/textViewReseñas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reseñas"
+        android:paddingTop="20dp" />
 
 </RelativeLayout>
