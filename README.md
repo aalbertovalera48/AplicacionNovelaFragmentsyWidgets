@@ -1,5 +1,9 @@
 # Aplicación de Gestión de Novelas con Fragmentos y Widgets - Alberto Valera
 
+**Link al Repositorio:** 
+
+**Link a la base de datos Firebase:** https://gestion-de-novelas-actualizado-default-rtdb.firebaseio.com/
+
 
 ## Descripción
 Esta aplicación permite gestionar una biblioteca personal de novelas, proporcionando funcionalidades para agregar, eliminar, buscar y marcar novelas como favoritas. Además, se integra con Firebase para la sincronización de datos y utiliza `AlarmManager` para programar tareas periódicas.
