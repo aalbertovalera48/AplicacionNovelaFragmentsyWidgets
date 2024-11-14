@@ -12,7 +12,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,6 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacionNovela">
+
         <activity
             android:name="com.example.aplicacionnovela.ui.theme.MainActivity"
             android:exported="true">
@@ -28,7 +28,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.theme.SettingsActivity" />
+
+        <activity android:name="com.example.aplicacionnovela.ui.theme.SettingsActivity" />
         <activity android:name="com.example.aplicacionnovela.ui.theme.RegisterActivity" />
         <activity android:name="com.example.aplicacionnovela.ui.theme.LoginActivity"
             android:exported="true">
@@ -37,8 +38,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="com.example.aplicacionnovela.ui.theme.FavoritosActivity"
             android:exported="false" />
+
+        <receiver android:name="com.example.aplicacionnovela.ui.theme.NovelaWidgetProvider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/novela_widget_info"/>
+        </receiver>
     </application>
 </manifest>

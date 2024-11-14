@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var novelas: MutableList<Novela>
-    private lateinit var adapter: NovelaAdapter
+    private lateinit var adapter: NovelaRecyclerViewAdapter
     private lateinit var firebaseHelper: FirebaseConfig
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,9 +38,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         novelas = mutableListOf()
-        val listView: ListView = findViewById(R.id.list_view_novelas)
-        adapter = NovelaAdapter(this, novelas)
-        listView.adapter = adapter
+        adapter = NovelaRecyclerViewAdapter(this, novelas)
 
         firebaseHelper = FirebaseConfig()
 
@@ -64,6 +61,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         AlarmManager.manageSync(this)
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, NovelasListFragment())
+                .commit()
+        }
     }
 
     override fun onStart() {
@@ -116,6 +119,7 @@ class MainActivity : AppCompatActivity() {
         adapter.notifyDataSetChanged()
         Toast.makeText(this, "Reseña añadida", Toast.LENGTH_SHORT).show()
     }
+
     private fun mostrarDialogoAñadirNovela() {
         val builder = AlertDialog.Builder(this)
         val inflater = layoutInflater
@@ -268,5 +272,15 @@ class MainActivity : AppCompatActivity() {
 
     fun obtenerNovelasFavoritas(): ArrayList<Novela> {
         return ArrayList(novelas.filter { it.favorito })
+    }
+
+    fun showNovelaDetails(novela: Novela) {
+        val fragment = NovelaDetailsFragment().apply {
+            setNovela(novela)
+        }
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 }

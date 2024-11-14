@@ -2,7 +2,7 @@ import android.content.Context
 import android.os.AsyncTask
 import android.widget.Toast
 import com.example.aplicacionnovela.ui.theme.Novela
-import com.example.aplicacionnovela.ui.theme.NovelaAdapter
+import com.example.aplicacionnovela.ui.theme.NovelaRecyclerViewAdapter
 import com.example.gestionnovelasavanzado.ui.GestionSegundoPlano.FirebaseConfig
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -11,7 +11,7 @@ import com.google.firebase.database.ValueEventListener
 class SyncTask(
     private val context: Context,
     private val novelas: MutableList<Novela>,
-    private val adapter: NovelaAdapter
+    private val adapter: NovelaRecyclerViewAdapter
 ) : AsyncTask<Void, Void, Boolean>() {
 
     private val firebaseHelper = FirebaseConfig()

@@ -17,7 +17,7 @@ object AlarmManager {
         } else {
             PendingIntent.FLAG_UPDATE_CURRENT
         }
-
+    
         val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, pendingIntentFlag)
 
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
